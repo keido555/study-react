@@ -5,7 +5,7 @@ import { Headline } from "src/components/Headline";
 export function Main(props) {
   return (
     <main className={classes.main}>
-      <Headline page={props.page} onClick={() => alert("クリック")}>
+      <Headline page={props.page}>
         {<code className={classes.code}>pages/{props.page}.js</code>}
       </Headline>
       <Links />
