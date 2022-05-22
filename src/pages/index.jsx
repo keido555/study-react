@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import styles from "src/styles/Home.module.css";
 import { Header } from "src/components/Header";
@@ -6,11 +6,19 @@ import { Footer } from "src/components/Footer";
 import { Main } from "src/components/Main";
 
 export default function Home() {
-  const foo = 1;
-  const handleClick = useCallback((e) => {
-    console.log(e.target.href);
-    e.preventDefault();
-    alert(foo);
+  const [count, setCount] = useState(0);
+
+  const handleClick = (e) => {
+    setCount((count) => count + 1);
+    setCount((count) => count + 1);
+  };
+
+  useEffect(() => {
+    document.body.style.backgroundColor = "lightblue";
+
+    return () => {
+      document.body.style.backgroundColor = "";
+    };
   }, []);
 
   return (
@@ -19,9 +27,8 @@ export default function Home() {
         <title>Create Next App</title>
       </Head>
       <Header />
-      <button href="/about" onClick={handleClick}>
-        ボタン
-      </button>
+      <h1>{count}</h1>
+      <button onClick={handleClick}>ボタン</button>
       <Main page="index" />
 
       <Footer />
