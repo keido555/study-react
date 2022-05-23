@@ -6,7 +6,8 @@ export function Headline(props) {
     <div>
       <h1 className={classes.title}>{page} page</h1>
 
-      <p className={classes.description}>Get started by editing {children}</p>
+      <p className={classes.description}>アイテムの数は {children} 個です</p>
+      <button onClick={props.handleReduce}>減らす</button>
     </div>
   );
 }
