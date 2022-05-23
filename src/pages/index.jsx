@@ -1,17 +1,21 @@
-import { useEffect } from "react";
 import Head from "next/head";
 import styles from "src/styles/Home.module.css";
 import { Header } from "src/components/Header";
 import { Footer } from "src/components/Footer";
 import { Main } from "src/components/Main";
-import { useCounter } from "src/hooks/useCounter";
-import { useInputArray } from "src/hooks/useInputArray";
-import { useBgLightBlue } from "src/hooks/useBgLightBlue";
 
-export default function Home() {
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
-  const { text, array, handleChange, handleAdd } = useInputArray();
-  useBgLightBlue();
+export default function Home(props) {
+  console.log(props);
+  const {
+    count,
+    isShow,
+    handleClick,
+    handleDisplay,
+    text,
+    array,
+    handleChange,
+    handleAdd,
+  } = props;
 
   return (
     <div className={styles.container}>
