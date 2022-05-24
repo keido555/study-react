@@ -1,6 +1,6 @@
 import classes from "src/components/Links/Links.module.css";
 
-export function Links({ items }) {
+export const Links = ({ items }) => {
   return (
     <div className={classes.grid}>
       {items.map((item) => {
@@ -13,4 +13,4 @@ export function Links({ items }) {
       })}
     </div>
   );
-}
+};
