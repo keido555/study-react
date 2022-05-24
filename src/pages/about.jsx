@@ -7,7 +7,6 @@ import { Main } from "src/components/Main";
 export default function About(props) {
   console.log(props);
   const {
-    count,
     doubleCount,
     isShow,
     handleClick,
