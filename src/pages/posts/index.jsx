@@ -5,7 +5,7 @@ import { Posts } from "src/components/posts/index";
 
 const Home = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Create Next App</title>
       </Head>
