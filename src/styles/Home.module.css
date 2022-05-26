@@ -1,4 +1,7 @@
 .container {
+  min-height: 100vh;
+  max-width: 800px;
+  /* text-align: center; */
+  margin: 0 auto;
   padding: 0 2rem;
-  text-align: center;
 }
