@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Header } from "src/components/Header";
-import { Posts as PostsComponent } from "src/components/posts/index";
+import { Posts as PostsComponent } from "src/components/Posts/index";
 
 const Posts = () => {
   return (
