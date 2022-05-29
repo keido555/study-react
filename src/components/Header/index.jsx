@@ -10,7 +10,7 @@ const NAV_ITEMS = [
 export const Header = () => {
   return (
     <header
-      className="flex justify-center items-center w-full h-24"
+      className="flex justify-center items-center w-full h-24 mb-4"
       style={{ "border-bottom": "solid 2px #eaeaea" }}
     >
       {NAV_ITEMS.map((item) => {

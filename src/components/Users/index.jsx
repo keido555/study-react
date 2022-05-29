@@ -17,18 +17,25 @@ export const UsersComponent = () => {
   }
 
   return (
-    <div>
-      <ol>
-        {data.map((user) => {
-          return (
-            <li key={user.id}>
-              <Link href={`/users/${user.id}`}>
-                <a>{`${user.name} (${user.email})`}</a>
-              </Link>
-            </li>
-          );
-        })}
-      </ol>
-    </div>
+    <ul className="grid grid-cols-2 gap-6">
+      {data.map((user) => {
+        return (
+          <li key={user.id}>
+            <Link href={`/users/${user.id}`}>
+              <a
+                className="block p-4 rounded hover:bg-gray-100"
+                style={{
+                  "box-shadow":
+                    "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+                }}
+              >
+                <h1 className="text-xl font-bold truncate">{user.name}</h1>
+                <div className="text-lg truncate">{user.email}</div>
+              </a>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
