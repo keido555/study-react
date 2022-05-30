@@ -25,7 +25,7 @@ export const CommentsByPostId = (props) => {
             style={{ "border-bottom": "solid 1px #eaeaea" }}
             className="pb-2 border-b"
           >
-            <Link href={`/comments/${comment.id}`}>
+            <Link href={`/comments/${comment.id}`} prefetch={false}>
               <a className="block hover:text-blue-500">{comment.body}</a>
             </Link>
           </li>
