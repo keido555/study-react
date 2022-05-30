@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Header } from "src/components/Header";
 
 const Index = () => {
   return (
@@ -7,7 +6,6 @@ const Index = () => {
       <Head>
         <title>Create Next App</title>
       </Head>
-      <Header />
       <h1 className="text-3xl font-bold">Next.jsで学ぶReact講座</h1>
       <p className="text-xl mt-4">JSON PlaceholderのAPIを色々叩いてみる</p>
     </div>

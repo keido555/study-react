@@ -1,19 +1,22 @@
 import Link from "next/link";
-import { useComponentsByPostId } from "src/hooks/useFetchArray";
+import { useFetchArray } from "src/hooks/useFetchArray";
+import { API_URL } from "src/utils/const";
 
-export const CommentsByPostId = (props) => {
-  const { data, error, isLoading, isEmpty } = useComponentsByPostId(props.id);
+export const CommentList = () => {
+  const { data, error, isLoading, isEmpty } = useFetchArray(
+    `${API_URL}/comments`
+  );
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <p>Loading...</p>;
   }
 
   if (error) {
-    return <div>{error.message}</div>;
+    return <p>{error.message}</p>;
   }
 
   if (isEmpty) {
-    return <div>No Comments Found.</div>;
+    return <p>No Comments Found.</p>;
   }
 
   return (
@@ -25,7 +28,7 @@ export const CommentsByPostId = (props) => {
             style={{ "border-bottom": "solid 1px #eaeaea" }}
             className="pb-2 border-b"
           >
-            <Link href={`/comments/${comment.id}`} prefetch={false}>
+            <Link href={`/comments/${comment.id}`}>
               <a className="block hover:text-blue-500">{comment.body}</a>
             </Link>
           </li>
